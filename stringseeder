@@ -1,0 +1,10 @@
+#!/bin/bash
+for file in ${@:2}
+do
+   if grep -q $1 "$file" ; then
+      echo "$1 found in $file"
+   else
+      echo -n "$1" >> $file
+      echo "$1 added to $file"
+   fi
+done

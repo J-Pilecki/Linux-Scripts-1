@@ -1,0 +1,73 @@
+#!/bin/bash
+#echo "QUAVE: ${@}"
+
+#if [ $# -ne 0 ]
+
+#then
+#echo " placeholder "
+#exit 0
+#fi
+
+#TOTAL=0
+#COUNTER=1
+#AVG=0.0
+#TEMPY=0
+
+#RE='^[0-9]+$'
+#echo "Num to calc avg, else f"
+
+#read TEMPY
+#for (( ; ; ))
+#do
+#   read TEMPY
+#   if ! [[ $TEMPY =~ RE ]];
+#      then
+#      echo "Int or f"
+#      read TEMPY
+#      if ! [[ $TEMPY =~ $RE ]];
+#      then
+#      break
+#      fi
+#   fi
+#TOTAL=`expr $TOTAL + $TEMPY`
+#COUNTER=`expr $COUNTER + 1`
+#AVG=`expr $TOTAL/$COUNTER`
+#done
+
+if [[ $# -ne 0 ]]; then
+   echo "Error"
+   exit 0
+fi
+TOTAL=0
+COUNTER=0
+RE='^[0-9]+$'
+leave='[f]'
+nanRE='^[f0-9]+$'
+echo "Enter number to calculate average, f to exit."
+for ((;;))
+do
+   read tempint
+   if ! [[ $tempint =~ $RE ]]; then
+      echo "Integer or f for exit."
+   for ((;;))
+   do
+      read tempint
+      if ! [[ $tempint =~ $nanRE ]]; then
+      echo "Integers only, exit with f"
+      else
+      break
+      fi
+   done
+   if [[ $tempint == $leave ]]; then
+      break
+   fi
+   else
+      TOTAL=`expr $TOTAL + $tempint`
+      COUNTER=$(($COUNTER+1))
+   fi
+   done
+   if [[ $COUNTER == 0 ]]; then
+      echo "The average is 0"
+   else
+      echo "The average is $(($TOTAL/$COUNTER))"
+   fi

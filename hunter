@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# COUNT=0
+#CLOCKCYCLES=0
+#for file in *;
+#do
+#if [[ $file == 'hunter' ]]; then
+#   CLOCKCYCLES=`expr $CLOCKCYCLES + 1`
+#else
+#   COUNT=`expr $COUNT + 1`
+#fi
+#done
+#if [[ $COUNT == 0 ]]; then
+#   echo "Directory is empty."
+#else
+#   for file in *;
+#   do
+#      if [[ $file == 'hunter' ]]; then
+#      CLOCKCYCLES=`expre $CLOCKCYCLES + 1`
+#      else
+#      echo "$file "
+#     # echo "$(( head -1 $(file) ))"
+#   done
+#fi 
+#exit 0
+
+for file in $(ls -p | grep -v /);
+do
+   if [[ "$(ls -A)" && "$(ls -A)" != "hunter" ]]; then
+   echo "The file name is $file "
+      grep -m1 "" $file
+      if [[ "$(grep -n $1 $file)" ]]; then
+         grep -n $1 $file
+      else
+         echo "String not found"
+      fi
+   echo " "
+   else
+      echo "The directory is empty"
+   fi
+done
