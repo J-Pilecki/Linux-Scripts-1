@@ -1,38 +1,4 @@
 #!/bin/bash
-#echo "QUAVE: ${@}"
-
-#if [ $# -ne 0 ]
-
-#then
-#echo " placeholder "
-#exit 0
-#fi
-
-#TOTAL=0
-#COUNTER=1
-#AVG=0.0
-#TEMPY=0
-
-#RE='^[0-9]+$'
-#echo "Num to calc avg, else f"
-
-#read TEMPY
-#for (( ; ; ))
-#do
-#   read TEMPY
-#   if ! [[ $TEMPY =~ RE ]];
-#      then
-#      echo "Int or f"
-#      read TEMPY
-#      if ! [[ $TEMPY =~ $RE ]];
-#      then
-#      break
-#      fi
-#   fi
-#TOTAL=`expr $TOTAL + $TEMPY`
-#COUNTER=`expr $COUNTER + 1`
-#AVG=`expr $TOTAL/$COUNTER`
-#done
 
 if [[ $# -ne 0 ]]; then
    echo "Error"
