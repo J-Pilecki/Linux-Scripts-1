@@ -44,6 +44,6 @@ run a loop that:
 STRINGSEEDER - Accepts a string followed by a space-delimited list of files as its input (and that list could be long), and it:
 
 Searches each file for the string
-If the file does contain the string, prints a line saying “string found in filename” where filenameis the name of the file and string is the string sought
+If the file does contain the string, prints a line saying “string found in filename” where filename is the name of the file and string is the string sought
 If the file does NOT contain the string, it appends the string to the end of the file, then prints “string added to filename” with the same rules as the previous 
 step; note that you can use a special redirection symbol >> to more easily accomplish appending!
