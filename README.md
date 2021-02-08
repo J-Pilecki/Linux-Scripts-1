@@ -1,22 +1,22 @@
-BASHY - Customize the existing .bashrc script in the following ways:
+BASHY - Customizes the existing .bashrc script in the following ways:
 
-Customize your prompt to display all in red color, in order listed:
+Customize prompt to display all in red color, in order listed:
 1.    The current time (using a 12-hour clock) |
 2.    username@hostname (that is, your user name, the “@” symbol, then the host name)
 3.    :: your current working directory
 4.    The > character at the end
 5.    NOTE: The | and :: are separators within the prompt to be printed as literal strings.  
-Example of a solution prompt (variants on 12-hr time display are acceptable):
+Example of a solution prompt:
 [04:12 pm] | joebob@drivein.net :: ./movies >
 
-Set up the following commonly used aliases:
+Sets up the following commonly used aliases:
 1.    Modify the personal command “ll” which invokes “ls” to show the long format (all file permissions) to add suffixes on the file size like Kilobyte, Megabyte 
-and Gigabyte; this custom command is in the existing .bashrc for our vLinux.  Don’t delete the other existing behaviors!
-2.    Create a personal command “untar” which unpacks an input tar file using verbose mode and filtering it through gzip
+and Gigabyte; this custom command is in the existing .bashrc for vLinux.
+2.    Created a personal command “untar” which unpacks an input tar file using verbose mode and filtering it through gzip
 3.    Force the default behavior of the rm command to always prompt you for each item being deleted.
 4.    Create a personal command “dus” which estimates your disk usage, printing out each item that is no more than 1 or fewer levels below the command line argument 
 and measuring by block-size=1K, then sorting the output in order of increasing size.
-5.    Write a small function that uses the first positional argument to itself.  It should call cdto the directory specified by that positional argument, then do 
+5.    Wrote a small function that uses the first positional argument to itself.  It calls cd to the directory specified by that positional argument, then do 
 the ls command to show all files there in long, human-readable format.  Then create a personal command called “cdls” which uses the function.  It is reasonable that 
 if the cd fails, you don’t want to do the ls—use short-circuiting to implement this in your function!
 
